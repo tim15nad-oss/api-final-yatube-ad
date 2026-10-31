@@ -10,9 +10,21 @@ from drf_spectacular.views import SpectacularAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/jwt/create/', TokenObtainPairView.as_view(), name='jwt-create'),
-    path('api/v1/jwt/refresh/', TokenRefreshView.as_view(), name='jwt-refresh'),
-    path('api/v1/jwt/verify/', TokenVerifyView.as_view(), name='jwt-verify'),
+    path(
+        'api/v1/jwt/create/',
+        TokenObtainPairView.as_view(),
+        name='jwt-create'
+    ),
+    path(
+        'api/v1/jwt/refresh/',
+        TokenRefreshView.as_view(),
+        name='jwt-refresh'
+    ),
+    path(
+        'api/v1/jwt/verify/',
+        TokenVerifyView.as_view(),
+        name='jwt-verify'
+    ),
     path('api/v1/', include('api.urls')),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path(
