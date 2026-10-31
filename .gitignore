@@ -1,0 +1,20 @@
+# Виртуальное окружение
+venv/
+env/
+
+# База данных
+db.sqlite3
+db.sqlite3-journal
+
+# Байт-код Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Настройки IDE и OS
+.vscode/
+.idea/
+.DS_Store
+
+# Собранная статика (если запускали collectstatic)
+staticfiles/
