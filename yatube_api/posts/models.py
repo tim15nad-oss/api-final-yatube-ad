@@ -20,8 +20,14 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name='posts')
     image = models.ImageField(
         upload_to='posts/', null=True, blank=True)
+
     group = models.ForeignKey(
-        Group, on_delete=models.SET_NULL, related_name='posts', null=True, blank=True)
+        Group,
+        on_delete=models.SET_NULL,
+        related_name='posts',
+        null=True,
+        blank=True
+    )
 
     class Meta:
         ordering = ['-pub_date']
@@ -43,12 +49,12 @@ class Comment(models.Model):
         return self.text
 
 
-# Новая модель для подписок (по ТЗ и чек-листу)
+
 class Follow(models.Model):
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='follower')  # Кто подписан
+        User, on_delete=models.CASCADE, related_name='follower')
     following = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='following')  # На кого подписан
+        User, on_delete=models.CASCADE, related_name='following')
 
     class Meta:
         constraints = [
