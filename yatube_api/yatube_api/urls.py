@@ -6,7 +6,6 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
-from drf_spectacular.views import SpectacularAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +25,7 @@ urlpatterns = [
         name='jwt-verify'
     ),
     path('api/v1/', include('api.urls')),
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+
     path(
         'redoc/',
         TemplateView.as_view(template_name='redoc.html'),
